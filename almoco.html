@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Sabor | Almoço</title>
+  <meta name="description" content="Cardápio de almoço da Casa Sabor: pratos completos preparados com carinho.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="topo">
+    <div class="container topo__conteudo">
+      <a href="index.html" class="logo" aria-label="Casa Sabor — página inicial">
+        <svg class="logo__icone" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M11 4c-1.5 2 1.5 3 0 5M16 3c-1.5 2 1.5 3 0 5M21 4c-1.5 2 1.5 3 0 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 15h24a12 9 0 0 1-24 0z" fill="currentColor"/>
+          <path d="M3 27h26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__texto">
+          <strong>Casa Sabor</strong>
+          <small>Restaurante</small>
+        </span>
+      </a>
+
+      <!-- Botão do menu no celular -->
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cafe-da-manha.html">Café da Manhã</a></li>
+          <li><a href="brunch.html">Brunch</a></li>
+          <li><a href="almoco.html" class="ativo" aria-current="page">Almoço</a></li>
+          <li><a href="jantar.html">Jantar</a></li>
+          <li><a href="sobremesa.html">Sobremesa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== BANNER (HERO) ===================== -->
+    <section class="hero">
+      <div class="hero__texto">
+        <h1>Almoço</h1>
+        <p>Uma pausa deliciosa no seu dia.</p>
+      </div>
+      <div class="hero__imagem">
+        <img src="img/almoco-banner.jpg" alt="Prato com arroz, feijão, frango grelhado e salada">
+      </div>
+    </section>
+
+    <!-- ===================== CARDÁPIO ===================== -->
+    <section class="cardapio container" aria-labelledby="titulo-cardapio">
+      <h2 id="titulo-cardapio" class="cardapio__titulo">Cardápio de Almoço</h2>
+      <p class="cardapio__sub">Pratos completos preparados com carinho.</p>
+
+      <ul class="cardapio__grade">
+        <li>
+          <article class="prato">
+            <img class="prato__foto" src="img/almoco-banner.jpg" alt="Prato Executivo com arroz, feijão, frango grelhado e salada">
+            <div class="prato__info">
+              <h3 class="prato__nome">Prato Executivo</h3>
+              <p class="prato__descricao">Arroz, feijão, frango grelhado e salada.</p>
+              <p class="prato__preco">R$ 29,90</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="prato">
+            <img class="prato__foto" src="img/lasanha-bolonhesa.jpg" alt="Lasanha à bolonhesa gratinada com manjericão">
+            <div class="prato__info">
+              <h3 class="prato__nome">Lasanha à Bolonhesa</h3>
+              <p class="prato__descricao">Lasanha gratinada com molho e queijo.</p>
+              <p class="prato__preco">R$ 34,90</p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="prato">
+            <img class="prato__foto" src="img/strogonoff-carne.jpg" alt="Strogonoff de carne com arroz e batata palha">
+            <div class="prato__info">
+              <h3 class="prato__nome">Strogonoff de Carne</h3>
+              <p class="prato__descricao">Carne cremosa com arroz e batata palha.</p>
+              <p class="prato__preco">R$ 32,90</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <div class="container rodape__conteudo">
+      <strong class="rodape__marca">Casa Sabor</strong>
+      <address class="rodape__contato">
+        <span>Rua das Flores, 123</span>
+        <span aria-hidden="true">•</span>
+        <a href="tel:+551133334444">(11) 3333-4444</a>
+      </address>
+      <ul class="rodape__redes">
+        <li><a href="#">Instagram</a></li>
+        <li aria-hidden="true">•</li>
+        <li><a href="#">Facebook</a></li>
+        <li aria-hidden="true">•</li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Abre e fecha o menu no celular
+    const botao = document.querySelector('.menu-botao');
+    const menu = document.querySelector('.menu');
+    botao.addEventListener('click', () => {
+      const aberto = menu.classList.toggle('aberto');
+      botao.setAttribute('aria-expanded', aberto);
+      botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+    });
+  </script>
+</body>
+</html>
