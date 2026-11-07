@@ -4,7 +4,7 @@ Repositório dedicado para a atividade de ESC II na FECAP, de versionamento de G
 
 ## 👩‍💻 Integrantes do projeto
 
-- [Andre Seji](https://github.com/Andreseij15)
+- [Andre Seiji Shiroma](https://github.com/Andreseij15)
 - [Débora Mayumi ](https://github.com/DMayumi)
 - [Felipe Farias](https://github.com/felipenono)
 - [Guilherme Ryuki Kawahira](https://github.com/GuiRyuki)
