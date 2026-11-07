@@ -1,13 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Sabor | Cardápio</title>
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Sabor | Cardápio</title>
+  <meta name="description" content="Casa Sabor: refeições deliciosas, ingredientes de qualidade e um ambiente acolhedor para todas as ocasiões.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="topo">
+    <div class="container topo__conteudo">
+      <a href="index.html" class="logo" aria-label="Casa Sabor — página inicial">
+        <svg class="logo__icone" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M11 4c-1.5 2 1.5 3 0 5M16 3c-1.5 2 1.5 3 0 5M21 4c-1.5 2 1.5 3 0 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 15h24a12 9 0 0 1-24 0z" fill="currentColor"/>
+          <path d="M3 27h26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__texto">
+          <strong>Casa Sabor</strong>
+          <small>Restaurante</small>
+        </span>
+      </a>
+
+      <!-- Botão do menu no celular -->
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="menu-principal" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html" class="ativo" aria-current="page">Home</a></li>
+          <li><a href="cafe-da-manha.html">Café da Manhã</a></li>
+          <li><a href="brunch.html">Brunch</a></li>
+          <li><a href="almoco.html">Almoço</a></li>
+          <li><a href="jantar.html">Jantar</a></li>
+          <li><a href="sobremesa.html">Sobremesa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== BANNER (HERO) ===================== -->
+    <section class="hero">
+      <div class="hero__texto">
+        <h1>Bem-vindo à Casa Sabor</h1>
+        <p>Refeições deliciosas, ingredientes de qualidade e um ambiente acolhedor para todas as ocasiões.</p>
+      </div>
+      <div class="hero__imagem">
+        <img src="img/hero-file-mignon.jpg" alt="Medalhão de carne com batatas assadas e alecrim">
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="sobre container">
+      <div class="sobre__icone" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="sobre__texto">
+        <h2>Sobre o Casa Sabor</h2>
+        <p>Somos um restaurante que valoriza a boa comida, o atendimento acolhedor e os momentos especiais à mesa. Aqui você encontra opções deliciosas para qualquer hora do dia.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CATEGORIAS ===================== -->
+    <section class="categorias container" aria-labelledby="titulo-categorias">
+      <h2 id="titulo-categorias" class="titulo-sublinhado">Nossas Categorias</h2>
+      <p class="categorias__sub">Explore o nosso cardápio e encontre a refeição ideal para cada momento.</p>
+
+      <ul class="categorias__grade">
+        <li>
+          <a href="cafe-da-manha.html" class="card">
+            <img src="img/cafe-da-manha.jpg" alt="">
+            <span class="card__nome">Café da Manhã</span>
+          </a>
+        </li>
+        <li>
+          <a href="brunch.html" class="card">
+            <img src="img/brunch.jpg" alt="">
+            <span class="card__nome">Brunch</span>
+          </a>
+        </li>
+        <li>
+          <a href="almoco.html" class="card">
+            <img src="img/almoco.jpg" alt="">
+            <span class="card__nome">Almoço</span>
+          </a>
+        </li>
+        <li>
+          <a href="jantar.html" class="card">
+            <img src="img/jantar.jpg" alt="">
+            <span class="card__nome">Jantar</span>
+          </a>
+        </li>
+        <li>
+          <a href="sobremesa.html" class="card">
+            <img src="img/sobremesa.jpg" alt="">
+            <span class="card__nome">Sobremesa</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== DESTAQUE ===================== -->
+    <section class="container">
+      <div class="destaque">
+        <div class="destaque__texto">
+          <h2>Ingredientes de qualidade, pratos variados e muito sabor.</h2>
+          <p>Do café da manhã à sobremesa, sempre uma boa opção para o seu dia.</p>
+        </div>
+        <div class="destaque__imagem">
+          <img src="img/destaque-petit-gateau.jpg" alt="Petit gâteau com sorvete de creme e hortelã">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <div class="container rodape__conteudo">
+      <strong class="rodape__marca">Casa Sabor</strong>
+      <address class="rodape__contato">
+        <span>Rua das Flores, 123</span>
+        <span aria-hidden="true">•</span>
+        <a href="tel:+551133334444">(11) 3333-4444</a>
+      </address>
+      <ul class="rodape__redes">
+        <li><a href="#">Instagram</a></li>
+        <li aria-hidden="true">•</li>
+        <li><a href="#">Facebook</a></li>
+        <li aria-hidden="true">•</li>
+        <li><a href="#">YouTube</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Abre e fecha o menu no celular
+    const botao = document.querySelector('.menu-botao');
+    const menu = document.querySelector('.menu');
+    botao.addEventListener('click', () => {
+      const aberto = menu.classList.toggle('aberto');
+      botao.setAttribute('aria-expanded', aberto);
+      botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+    });
+  </script>
 </body>
 </html>
