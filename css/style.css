@@ -109,10 +109,10 @@ h1, h2, h3, p { margin-top: 0; }
   padding: 60px max(32px, calc((100vw - var(--largura-maxima)) / 2 + 32px));
   padding-right: 40px;
 }
-.hero__texto h1 { margin-bottom: 16px; font-size: clamp(36px, 4vw, 52px); font-weight: 800; letter-spacing: -0.02em; }
+.hero__texto h1 { margin-bottom: 16px; font-size: clamp(36px, 4vw, 52px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
 .hero__texto p { margin-bottom: 0; max-width: 480px; font-size: clamp(18px, 1.5vw, 20px); line-height: 1.5; opacity: 0.9; }
 .hero__imagem { width: 100%; height: 100%; min-height: 400px; }
-.hero__imagem img { width: 50%; height: 70; object-fit: cover; }
+.hero__imagem img { width: 100%; height: 100%; object-fit: cover; }
 
 /* =========================================================
    5. SOBRE
@@ -187,22 +187,67 @@ h1, h2, h3, p { margin-top: 0; }
 /* =========================================================
    8. RODAPÉ
    ========================================================= */
-.rodape { 
-  background: var(--cor-marrom-escuro); 
-  color: var(--cor-branco); 
-  padding-block: 32px; 
-  margin-top: auto;
+.rodape {
+  background: var(--cor-marrom-escuro);
+  color: var(--cor-branco);
+  padding-top: 48px;
 }
 .rodape__conteudo {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 1.4fr;
   align-items: center;
-  gap: 24px;
+  gap: 48px;
+  padding-bottom: 40px;
 }
-.rodape__marca { font-size: 22px; font-weight: 800; }
-.rodape__contato { font-style: normal; font-size: 14px; opacity: 0.9; }
-.rodape__redes { display: flex; justify-content: flex-end; gap: 12px; font-size: 14px; }
-.rodape__redes a:hover { text-decoration: underline; }
+.rodape__info { display: flex; flex-direction: column; gap: 20px; }
+.rodape__marca { font-size: 26px; font-weight: 800; }
+
+/* Endereço e telefone */
+.rodape__contato {
+  display: flex; flex-direction: column; gap: 10px;
+  font-style: normal; font-size: 15px; opacity: 0.9;
+}
+.rodape__contato a { display: inline-flex; align-items: center; gap: 10px; }
+.rodape__contato a:hover { text-decoration: underline; }
+.rodape__contato svg {
+  width: 20px; height: 20px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Ícones das redes sociais */
+.rodape__redes { display: flex; gap: 12px; }
+.rodape__redes a {
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: background var(--transicao), border-color var(--transicao);
+}
+.rodape__redes a:hover {
+  background: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+}
+.rodape__redes svg {
+  width: 20px; height: 20px;
+  fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round;
+}
+.rodape__redes svg .preenchido { fill: currentColor; stroke: none; }
+
+/* Mapa */
+.rodape__mapa {
+  border-radius: var(--raio-medio);
+  overflow: hidden;
+  height: 240px;
+}
+.rodape__mapa iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* Linha de baixo */
+.rodape__base {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-block: 16px;
+  font-size: 13px;
+  opacity: 0.75;
+}
 
 /* =========================================================
    9. RESPONSIVIDADE (TABLET E CELULAR)
@@ -228,8 +273,7 @@ h1, h2, h3, p { margin-top: 0; }
   .categorias__grade { grid-template-columns: repeat(3, 1fr); }
   
   /* Footer */
-  .rodape__conteudo { grid-template-columns: 1fr; text-align: center; gap: 16px; }
-  .rodape__redes { justify-content: center; }
+  .rodape__conteudo { grid-template-columns: 1fr; gap: 32px; }
 }
 
 @media (max-width: 768px) {
