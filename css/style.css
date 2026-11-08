@@ -250,6 +250,93 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 /* =========================================================
+   8.1 RODAPÉ SIMPLES (uma linha, como no Figma)
+   Usado nas páginas de cardápio: <footer class="rodape rodape--simples">
+   Não altera o rodapé da Home (ícones + mapa).
+   ========================================================= */
+.rodape--simples { padding-top: 0; }
+.rodape--simples .rodape__conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  min-height: 122px;
+  padding-block: 24px;
+}
+.rodape--simples .rodape__contato,
+.rodape--simples .rodape__redes {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+.rodape--simples .rodape__redes a {
+  display: inline;
+  width: auto; height: auto;
+  border: 0; border-radius: 0;
+}
+.rodape--simples .rodape__redes a:hover,
+.rodape--simples .rodape__contato a:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   8.2 CARDÁPIO (PÁGINAS DE CATEGORIA: ALMOÇO, ETC.)
+   ========================================================= */
+.cardapio { padding-block: 48px 64px; }
+.cardapio__titulo {
+  margin-bottom: 8px;
+  font-size: clamp(28px, 3vw, 34px);
+  font-weight: 800;
+  color: var(--cor-marrom-escuro);
+}
+.cardapio__sub {
+  margin-bottom: 40px;
+  font-size: 17px;
+  color: var(--cor-texto-secundario);
+}
+.cardapio__grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.prato {
+  display: flex;
+  flex-direction: column;
+  height: 100%;            /* cards da mesma linha com a mesma altura */
+  overflow: hidden;        /* arredonda também os cantos da foto */
+  background: #fff3e9;
+  border-radius: 12px;
+}
+.prato__foto { height: 238px; }
+.prato__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;                 /* ocupa o resto do card */
+  padding: 20px 20px 16px;
+}
+.prato__nome {
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--cor-marrom-escuro);
+}
+.prato__descricao {
+  margin-bottom: 28px;
+  font-size: 14px;
+  color: var(--cor-texto-secundario);
+}
+.prato__preco {
+  margin: auto 0 0;        /* empurra o preço para a base do card */
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--cor-destaque);
+}
+
+/* =========================================================
    9. RESPONSIVIDADE (TABLET E CELULAR)
    ========================================================= */
 @media (max-width: 1024px) {
@@ -298,4 +385,20 @@ h1, h2, h3, p { margin-top: 0; }
 
 @media (max-width: 480px) {
   .categorias__grade { grid-template-columns: 1fr; }
+}
+
+/* Cardápio e rodapé simples */
+@media (max-width: 1024px) {
+  .cardapio__grade { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+@media (max-width: 640px) {
+  .cardapio { padding-block: 32px 48px; }
+  .cardapio__grade { grid-template-columns: 1fr; }
+  .rodape--simples .rodape__conteudo {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .rodape--simples .rodape__contato,
+  .rodape--simples .rodape__redes { justify-content: center; flex-wrap: wrap; }
 }
