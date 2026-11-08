@@ -3,105 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Sabor - Sobremesas Italianas</title>
-    <!-- Link para o seu CSS existente -->
+    <title>Casa Sabor - Sobremesas</title>
     
+    <!-- Conectando o CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho / Navegação -->
-    <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="Casa Sabor Logo">
-            <span>Casa Sabor</span>
+    <!-- 1. CABEÇALHO (TOPO) - Classes em português -->
+    <header class="topo">
+        <div class="container topo__conteudo">
+            <a href="index.html" class="logo" aria-label="Casa Sabor — página inicial">
+                <svg class="logo__icone" viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M11 4c-1.5 2 1.5 3 0 5M16 3c-1.5 2 1.5 3 0 5M21 4c-1.5 2 1.5 3 0 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 15h24a12 9 0 0 1-24 0z" fill="currentColor"/>
+                    <path d="M3 27h26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+                <span class="logo__texto">
+                    <strong>Casa Sabor</strong>
+                    <small>Restaurante</small>
+                </span>
+            </a>
+
+            <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="menu" id="menu-principal" aria-label="Menu principal">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cafe-da-manha.html">Café da Manhã</a></li>
+                    <li><a href="brunch.html">Brunch</a></li>
+                    <li><a href="almoco.html">Almoço</a></li>
+                    <li><a href="jantar.html">Jantar</a></li>
+                    <!-- Classe 'ativo' deixa o botão laranja -->
+                    <li><a href="sobremesa.html" class="ativo" aria-current="page">Sobremesa</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Café da Manhã</a>
-            <a href="#">Brunch</a>
-            <a href="#">Almoço</a>
-            <a href="#">Jantar</a>
-            <a href="#" class="active">Sobremesa</a>
-        </nav>
     </header>
 
-    <!-- Banner Principal (Hero) -->
+    <!-- 2. BANNER (HERO) -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero__texto">
             <h1>Sobremesa</h1>
             <p>Um toque doce da Itália para completar a refeição.</p>
         </div>
-        <div class="hero-image">
-            <!-- Imagem de fundo ou tag img referente a sobremesa italiana -->
-            <img src="hero-tiramisu.jpg" alt="Tiramisù">
+        <div class="hero__imagem">
+            <img src="img/tiramisu.jpg" alt="Tiramisù" width="12" >
         </div>
     </section>
 
-    <!-- Seção do Cardápio -->
-    <main class="menu-section">
-        <div class="container">
-            <h2>Cardápio de Sobremesa</h2>
-            <p class="subtitle">Escolha seu doce favorito.</p>
+    <!-- 3. CONTEÚDO PRINCIPAL (CARDS DE SOBREMESA) -->
+    <main>
+        <section class="categorias container" aria-labelledby="titulo-cardapio">
+            <h2 id="titulo-cardapio" class="titulo-sublinhado">Cardápio de Sobremesa</h2>
+            <p class="categorias__sub">Escolha seu doce favorito.</p>
 
-            <div class="menu-grid">
+            <!-- Usando a grade de cards do CSS original (categorias__grade) -->
+            <ul class="categorias__grade">
                 
-                <!-- Item 1: Tiramisù -->
-                <article class="card">
-                    <div class="card-image">
-                        <img src="tiramisu.jpg" alt="Tiramisù">
+                <!-- Card 1 -->
+                <li>
+                    <div class="card">
+                        <img src="img/Tiramisu.jpg" alt="Tiramisù">
+                        <div style="padding: 16px; text-align: center;">
+                            <span class="card__nome" style="padding: 0 0 8px 0;">Tiramisù</span>
+                            <p style="margin: 0 0 8px 0; font-size: 14px; color: var(--cor-texto-secundario);">Clássico italiano com café, mascarpone e cacau.</p>
+                            <strong style="color: var(--cor-destaque); font-size: 18px;">R$ 28,90</strong>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Tiramisù</h3>
-                        <p>Clássico italiano com café, mascarpone e cacau.</p>
-                        <span class="price">R$ 28,90</span>
-                    </div>
-                </article>
+                </li>
 
-                <!-- Item 2: Panna Cotta -->
-                <article class="card">
-                    <div class="card-image">
-                        <img src="panna-cotta.jpg" alt="Panna Cotta">
+                <!-- Card 2 -->
+                <li>
+                    <div class="card">
+                        <img src="img/PannaCotta.jpg" alt="Panna Cotta">
+                        <div style="padding: 16px; text-align: center;">
+                            <span class="card__nome" style="padding: 0 0 8px 0;">Panna Cotta</span>
+                            <p style="margin: 0 0 8px 0; font-size: 14px; color: var(--cor-texto-secundario);">Sobremesa cremosa com calda de frutas vermelhas.</p>
+                            <strong style="color: var(--cor-destaque); font-size: 18px;">R$ 22,90</strong>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Panna Cotta</h3>
-                        <p>Sobremesa cremosa com calda de frutas vermelhas.</p>
-                        <span class="price">R$ 22,90</span>
-                    </div>
-                </article>
+                </li>
 
-                <!-- Item 3: Cannoli -->
-                <article class="card">
-                    <div class="card-image">
-                        <img src="cannoli.jpg" alt="Cannoli">
+                <!-- Card 3 -->
+                <li>
+                    <div class="card">
+                        <img src="img/Cannoli.jpg" alt="Cannoli">
+                        <div style="padding: 16px; text-align: center;">
+                            <span class="card__nome" style="padding: 0 0 8px 0;">Cannoli</span>
+                            <p style="margin: 0 0 8px 0; font-size: 14px; color: var(--cor-texto-secundario);">Massa crocante recheada com ricota e pistache.</p>
+                            <strong style="color: var(--cor-destaque); font-size: 18px;">R$ 19,90</strong>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Cannoli</h3>
-                        <p>Massa crocante recheada com ricota e pistache.</p>
-                        <span class="price">R$ 19,90</span>
-                    </div>
-                </article>
+                </li>
 
+                <!-- Card 4 -->
+                <li>
+                    <div class="card">
+                        <img src="img/Gelato.jpg" alt="Gelato">
+                        <div style="padding: 16px; text-align: center;">
+                            <span class="card__nome" style="padding: 0 0 8px 0;">Gelato</span>
+                            <p style="margin: 0 0 8px 0; font-size: 14px; color: var(--cor-texto-secundario);">Sorvete italiano artesanal com sabores variados.</p>
+                            <strong style="color: var(--cor-destaque); font-size: 18px;">R$ 15,90</strong>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Card 5 -->
+                <li>
+                    <div class="card">
+                        <img src="img/Affogato.jpg" alt="Affogato">
+                        <div style="padding: 16px; text-align: center;">
+                            <span class="card__nome" style="padding: 0 0 8px 0;">Affogato</span>
+                            <p style="margin: 0 0 8px 0; font-size: 14px; color: var(--cor-texto-secundario);">Sorvete de baunilha banhado com café expresso quente.</p>
+                            <strong style="color: var(--cor-destaque); font-size: 18px;">R$ 18,50</strong>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+
+        <!-- Destaque (Opcional, igual à home) -->
+        <section class="container" style="margin-top: 40px; margin-bottom: 60px;">
+            <div class="destaque">
+                <div class="destaque__texto">
+                    <h2>O verdadeiro sabor da Itália.</h2>
+                    <p>Receitas tradicionais preparadas com carinho para você.</p>
+                </div>
+                <div class="destaque__imagem">
+                    <img src="img/bandeiraItalia.jpg" alt="Sobremesa Italiana">
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <strong>Casa Sabor</strong>
-            </div>
-            <div class="footer-address">
-                Rua das Flores, 123 • (11) 3333-4444
-            </div>
-            <div class="footer-social">
-                <a href="#">Instagram</a> • <a href="#">Facebook</a> • <a href="#">YouTube</a>
-            </div>
+    <!-- 4. RODAPÉ (FOOTER) -->
+    <footer class="rodape">
+        <div class="container rodape__conteudo">
+            <strong class="rodape__marca">Casa Sabor</strong>
+            <address class="rodape__contato">
+                <span>Rua das Flores, 123</span>
+                <span aria-hidden="true">•</span>
+                <a href="tel:+551133334444">(11) 3333-4444</a>
+            </address>
+            <ul class="rodape__redes">
+                <li><a href="#">Instagram</a></li>
+                <li aria-hidden="true">•</li>
+                <li><a href="#">Facebook</a></li>
+                <li aria-hidden="true">•</li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
         </div>
     </footer>
 
+    <script>
+        // Abre e fecha o menu no celular
+        const botao = document.querySelector('.menu-botao');
+        const menu = document.querySelector('.menu');
+        botao.addEventListener('click', () => {
+            const aberto = menu.classList.toggle('aberto');
+            botao.setAttribute('aria-expanded', aberto);
+            botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+        });
+    </script>
 </body>
-
-
 </html>
