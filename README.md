@@ -20,13 +20,20 @@ Repositório dedicado para a atividade de ESC II na FECAP, de versionamento de G
 ## 🛠 Estrutura de pastas
 
 ```
-├── Raiz
+📁 casa-sabor (Pasta Raiz do Projeto)
 │
-├── XXXX
-│   ├── XXXX
-│   └── XXX
-├── XXXX
-└── READ.md
+├── 📄 index.html              (Página Home)
+├── 📄 cafe-da-manha.html      (Página Café da Manhã)
+├── 📄 brunch.html             (Página Brunch)
+├── 📄 almoco.html             (Página Almoço)
+├── 📄 jantar.html             (Página Jantar)
+├── 📄 sobremesa.html          (Página Sobremesa)
+│
+├── 📁 css
+│   └── 📄 style.css           (O arquivo único de estilos)
+│
+└── 📁 img
+   
 
 ```
 
